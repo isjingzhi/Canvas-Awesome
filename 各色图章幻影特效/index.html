@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html >
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            /*width: 100%;*/
+            /*height: 100%;*/
+            overflow: hidden;
+        }
+
+        button {
+            color: #000;
+            background: #fff;
+            font-size: 20px;
+            padding: 5px 0;
+            width: 120px;
+            display: block;
+            margin: 10px;
+            float: left;
+            clear: both;
+            border: 1px solid white;
+        }
+
+        .active, button:hover {
+            color: #fff;
+            background: #000;
+        }
+
+        canvas {
+            position: fixed;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            background: #000;
+            width: 100%;
+            height: 100%;
+        }
+
+        #down-left {
+            /*flex元素的宽高默认都是缩到做小的*/
+            display: flex;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            padding: 10px;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-start;
+        }
+
+        #top-left {
+            padding: 10px;
+        }
+
+    </style>
+
+    <title>各色图案幻影特效</title>
+</head>
+
+<body>
+<div id="top-left">
+    <!--使用button的value-->
+    <button value="square" class="active">方块</button>
+    <button value="circle">圆圈</button>
+    <button value="cross">十字</button>
+    <button value="concave">凹菱</button>
+    <button value="flower">梅花</button>
+    <button value="star">星星</button>
+</div>
+
+<div id="down-left">
+    <!--注意,html中写onclick中的内容是函数体内部的内容,而参数event是放在外层函数中的-->
+    <button onclick="toggleHollow()" class="active">空 心</button>
+    <button onclick="toggleHollow()">实 心</button>
+</div>
+
+<canvas id="c"></canvas>
+
+<script type="text/javascript" src="js/main.js"></script>
+
+</body>
+</html>

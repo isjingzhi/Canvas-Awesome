@@ -1,0 +1,123 @@
+
+body {
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+
+/*包裹所有容器样式*/
+.cube {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    /*表示所有子元素在3D空间中呈现。*/
+    transform-style: preserve-3d;
+    transform: rotateX(0deg) rotateY(0deg);
+    animation: rotate linear 20s infinite;      /*linear表示匀速变化*/
+}
+
+@-webkit-keyframes rotate {
+    from {
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+    to {
+        transform: rotateX(360deg) rotateY(-360deg) rotateZ(360deg);
+    }
+}
+@keyframes rotate {
+    from {
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+    to {
+        transform: rotateX(360deg) rotateY(-360deg) rotateZ(360deg);
+    }
+}
+
+/*所有对等图片都是本身完全重叠的*/
+
+/*正方体*/
+.cube div {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    opacity: 0.8;
+    /* !!!! 实现过渡 渐变的效果 */
+    /* 允许CSS属性值在一定的时间区间内平滑的过渡 */
+    transition: all .4s;
+}
+
+/*内部球体*/
+.cube span {
+    display: block;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    border-radius: 50%;
+}
+
+/*图片*/
+.pic {
+    width: 150px;
+    height: 150px;
+}
+
+.cube .out_front {
+    transform: rotateY(0deg) translateZ(75px);
+}
+
+.cube .out_back {
+    transform: rotateY(180deg) translateZ(75px);
+}
+
+.cube .out_left {
+    transform: rotateY(-90deg) translateZ(75px);
+}
+
+.cube .out_right {
+    transform: rotateY(90deg) translateZ(75px);
+}
+
+.cube .out_top {
+    transform: rotateX(90deg) translateZ(75px);
+}
+
+.cube .out_bottom {
+    transform: rotateX(-90deg) translateZ(75px);
+}
+
+/*3D旋转和z轴坐标变化的顺序很重要*/
+/*鼠标移入后样式*/
+.cube:hover .out_front {
+    transform: rotateY(0deg) translateZ(150px);
+}
+
+.cube:hover .out_back {
+    transform: rotateY(180deg) translateZ(150px);
+}
+
+.cube:hover .out_left {
+    transform: rotateY(-90deg) translateZ(150px);
+}
+
+.cube:hover .out_right {
+    transform: rotateY(90deg) translateZ(150px);
+}
+
+.cube:hover .out_top {
+    transform: rotateX(90deg) translateZ(150px);
+}
+
+.cube:hover .out_bottom {
+    transform: rotateX(-90deg) translateZ(150px);
+}
+
+.cube:hover{
+    cursor: none;
+}

@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html >
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>梦幻大树根生长动画特效</title>
+    <!--删除空行技巧:正则匹配"\n\n"替换成"\n"...-->
+    <style type="text/css">
+        body {
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+            background: #fff;
+        }
+
+        canvas {
+            background-color: #000;
+            cursor: pointer;
+            -webkit-transform: rotate(180deg);
+            -moz-transform: rotate(180deg);
+            -ms-transform: rotate(180deg);
+            -o-transform: rotate(180deg);
+            transform: rotate(180deg);
+            /*默认是以中心为旋转轴的*/
+        }
+
+        #statMsg {
+            position: fixed;
+            display: flex;
+            top: 0;
+            left: 0;
+            padding: 5px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<canvas id='canvas'></canvas>
+<a download="tree.png" style="display: none;" id="download"></a>
+<div id="statMsg">阶段</div>
+<script type="text/javascript" src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>发光loading...动画</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+
+    <style>
+        /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+        body {
+            background: #000;
+            display: flex;
+            align-items: center; /*垂直居中*/
+            justify-content: center; /*水平居中*/
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            overflow: hidden;
+        }
+
+        canvas {
+            /*background: #131c35 linear-gradient(#192853, #131c35);*/
+            display: block;
+            background: #000;
+            /*为了让canvas能够撑开body,static无法溢出父元素...*/
+            position: absolute;
+            -webkit-animation: zoom 10s infinite;
+            -o-animation: zoom 10s infinite;
+            animation: zoom 10s infinite;
+        }
+
+        @keyframes zoom {
+            0% {
+                width: 1000px;
+                height: 600px;
+            }
+            50% {
+                width: 3000px;
+                height: 1800px;
+            }
+            100% {
+                width: 1000px;
+                height: 600px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<canvas id="c"></canvas>
+
+<script src="js/index.js"></script>
+
+</body>
+</html>

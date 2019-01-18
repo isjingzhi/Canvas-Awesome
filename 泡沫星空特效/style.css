@@ -1,0 +1,42 @@
+body {
+    background: #3E4777;
+    overflow: hidden;
+    text-align: center;
+    margin: 0;
+}
+
+.instructions {
+    letter-spacing: 0.2em;
+    color: white;
+    height: 100px;
+    width: 30%;
+    text-align: center;
+    background: transparent;
+    position: fixed;
+    top: 10%;
+    left: 35%;
+    right: 35%;
+    margin: 0 auto;
+    animation: mymove 5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    font-family: monospace,SansSerif,"黑体","宋体","手札体", "圆体", "楷体", serif;
+
+}
+
+@keyframes mymove {
+    0% {
+        opacity: 1;
+        font-size: 58px;
+    }
+    30% {
+        opacity: 1;
+        font-size: 58px;
+
+    }
+    100% {
+        opacity: 0;
+        font-size: 85px;
+    }
+}
+

@@ -1,0 +1,171 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+#tridiv {
+    perspective: 800px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    font-size: 100%;
+}
+
+.face {}
+
+.scene, .shape, .face, .face-wrapper, .cr {
+    position: absolute;
+    transform-style: preserve-3d;
+}
+
+.scene {
+    width: 80em;
+    height: 80em;
+    top: 50%;
+    left: 50%;
+    margin: -40em 0 0 -40em;
+}
+
+.shape {
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    transform-origin: 50%;
+}
+
+.face, .face-wrapper {
+    transform-origin: 0 0;
+}
+
+.face {
+    background-size: 100% 100% !important;
+    background-position: center;
+}
+
+.face-wrapper .face {
+    left: 100%;
+    width: 100%;
+    height: 100%
+}
+
+.photon-shader {
+    opacity: 1;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.4);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(33, 33, 33, .95);
+    outline: 5px red solid
+}
+
+.side {
+    left: 50%;
+}
+
+.cr, .cr .side {
+    height: 100%;
+}
+
+[class*="cuboid"] .ft, [class*="cuboid"] .bk {
+    width: 100%;
+    height: 100%;
+}
+
+[class*="cuboid"] .bk {
+    left: 100%;
+}
+
+[class*="cuboid"] .rt {
+    transform: rotateY(-90deg) translateX(-50%);
+}
+
+[class*="cuboid"] .lt {
+    transform: rotateY(90deg) translateX(-50%);
+}
+
+[class*="cuboid"] .tp {
+    transform: rotateX(90deg) translateY(-50%);
+}
+
+[class*="cuboid"] .bm {
+    transform: rotateX(-90deg) translateY(-50%);
+}
+
+[class*="cuboid"] .lt {
+    left: 100%;
+}
+
+[class*="cuboid"] .bm {
+    top: 100%;
+}
+
+/* .cub-1 styles */
+
+.cub-1 {
+    transform: translate3D(0em, -2.625em, -0.125em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    opacity: 1;
+    width: 10em;
+    height: 10em;
+    margin: -5em 0 0 -5em;
+}
+
+.cub-1 .ft {
+    transform: translateZ(5em);
+}
+
+.cub-1 .bk {
+    transform: translateZ(-5em) rotateY(180deg);
+}
+
+.cub-1 .rt, .cub-1 .lt {
+    width: 10em;
+    height: 10em;
+}
+
+.cub-1 .tp, .cub-1 .bm {
+    width: 10em;
+    height: 10em;
+}
+
+.cub-1 .face {}
+
+#top {
+    transform: rotateY(0);
+    transform-origin: right;
+}
+
+#after {
+    transform: rotateX(-1deg);
+    transform-origin: bottom;
+}
+
+#left {
+    transform: rotateX(-1deg);
+    transform-origin: bottom;
+}
+
+.haipa {
+    color: #FFF;
+    display: block;
+    font-size: 60px;
+    text-align: left;
+}
+
+.chongzhi {
+    color: #FFF;
+    font-size: 22px;
+    text-align: left
+}
+
+img {
+    position: absolute;
+    display: inline-block;
+    right: 0;
+    bottom: 0;
+    transform: translateZ(3.5em) rotateY(40deg);
+}
